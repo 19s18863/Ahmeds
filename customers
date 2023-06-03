@@ -1,1 +1,12 @@
+def store_customer_data(customer_data):
+    # Function to store business data about customers
+    # This function will support management in strategic decision making
+    with open("customer_data.txt", "a") as file:
+        file.write(f"{customer_data}\n")
 
+# Entry point of the program
+if __name__ == "__main__":
+    # Example usage of the function
+    customer_name = input("Enter customer name: ")
+    store_customer_data(customer_name)
+    print("Customer data stored successfully.")
