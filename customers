@@ -1,12 +1,32 @@
+
 def store_customer_data(customer_data):
     # Function to store business data about customers
-    # This function will support management in strategic decision making
+    # Support management in strategic decision making
     with open("customer_data.txt", "a") as file:
         file.write(f"{customer_data}\n")
 
+def analyze_data_and_define_potential_customers():
+    # Function to analyze data and define potential customers based on their interest
+    # This additional functionality will help identify potential customers based on their interests
+    customer_data = []
+    with open("customer_data.txt", "r") as file:
+        for line in file:
+            customer_data.append(line.strip())
+
+    potential_customers = []
+    for customer in customer_data:
+        # Add your logic here to analyze customer data and define potential customers based on their interest
+        if customer == "John Doe":
+            potential_customers.append(customer)
+
+    return potential_customers
+
 # Entry point of the program
 if __name__ == "__main__":
-    # Example usage of the function
+    # Example usage of the functions
     customer_name = input("Enter customer name: ")
     store_customer_data(customer_name)
     print("Customer data stored successfully.")
+
+    potential_customers = analyze_data_and_define_potential_customers()
+    print("Potential Customers:", potential_customers)
